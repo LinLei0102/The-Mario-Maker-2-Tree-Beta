@@ -3530,8 +3530,9 @@ function typeExperimentalCode() {
 }
 //
 function checkExperimentalCode() {
+    const input = localStorage.TMIT_ExperimentalCode || ''
 	const salt = '9KeVd0LqsTNo35'
-	const code = salt.slice(0, 7) + localStorage.TMIT_ExperimentalCode.trim().toUpperCase() + salt.slice(7)
+	const code = salt.slice(0, 7) + input.trim().toUpperCase() + salt.slice(7)
 	const hash = sha256(code);
 
 	if (hash == 'cb46b2df1c8c55864b0c8e97b7e846c11998a6ae34fa467fb72bec3c1d28389d') {
